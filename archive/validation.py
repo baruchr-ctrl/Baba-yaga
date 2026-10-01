@@ -36,20 +36,22 @@ def validate_id(value):
 
     Returns (bool, str).
     """
-    h
+    
     raise NotImplementedError("validate_id")
 
 
 def validate_title(value):
-    """A title must be present and at least 3 characters once stripped.
-
-    Valid:   "Tarikh al-Sudan"
-    Invalid: "", "   ", "Ab"
-
-    Returns (bool, str).
-    """
-    raise NotImplementedError("validate_title")
-
+    work=True
+    
+    #check for numbers in the string
+    checknum= any(char.isdigit() for char in value)
+    if not value.strip() or len(value.strip())<3 or checknum==True:
+        work =False
+        st="This is not a valid title"
+    else:
+        st="This is a valid title"   
+    return (work,st)
+    
 
 def validate_city(value):
     """A city must be present and appear in KNOWN_CITIES.
