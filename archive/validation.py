@@ -36,7 +36,19 @@ def validate_id(value):
 
     Returns (bool, str).
     """
-    h
+    if not value :
+        return (False,"Empty")
+    if len(value)!=5:
+        return (False,"The length of ID is not 5")
+    if value[:1]!="MS":
+        return (False,"First two letters not \'MS\'")
+    try:
+        int(value[2:4])
+        return("True","")
+    except ValueError:
+        return ("False","Last three letters not all integers")
+
+    
     raise NotImplementedError("validate_id")
 
 
