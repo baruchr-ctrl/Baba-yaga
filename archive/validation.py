@@ -42,11 +42,15 @@ def validate_id(value):
 
 def validate_title(value):
     work=True
+    
     #check for numbers in the string
     checknum= any(char.isdigit() for char in value)
-    if not value.strip() or len(value.strip()<3 or checknum==True):
+    if not value.strip() or len(value.strip())<3 or checknum==True:
         work =False
-    return (work,value)
+        st="This is not a valid title"
+    else:
+        st="This is a valid title"   
+    return (work,st)
     
 
 def validate_city(value):
