@@ -21,7 +21,7 @@ The year range is INCLUSIVE at both ends: 1100 and 1900 are VALID.
 from archive.errors import MalformedRecordError  # noqa: F401  (you may not need it here)
 
 KNOWN_CITIES = ["Timbuktu", "Djenne", "Gao", "Walata", "Chinguetti"]
-
+citylower = ["timbuktu", "djenne", "gao", "walata", "chinguetti"]
 VALID_CONDITIONS = ["fragile", "fair", "good"]
 
 MIN_YEAR = 1100
@@ -54,15 +54,12 @@ def validate_title(value):
     
 
 def validate_city(value):
-    """A city must be present and appear in KNOWN_CITIES.
-
-    Comparison is case-insensitive: "timbuktu" is acceptable.
-    "Kano" is not in our list, so it is rejected — and that is a real
-    decision with a cost. Write about it in your README.
-
-    Returns (bool, str).
-    """
-    raise NotImplementedError("validate_city")
+  
+    value = value.lower()
+    for i in citylower:
+        if value == i:
+            return (True, "This is a valid city")
+    return (False, "This is not a valid city")
 
 
 def validate_year(value):
