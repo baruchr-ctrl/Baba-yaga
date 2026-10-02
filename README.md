@@ -12,11 +12,11 @@
 
 | Field | Type | Example | If it is unknown, we… |
 | --- | --- | --- | --- |
-| id |  | `MS001` |  |
-| title |  |  |  |
-| city |  |  |  |
-| year |  |  |  |
-| condition |  |  |  |
+| id | string | `MS001` |  |
+| title | string |  |  |
+| city | string |  |  |
+| year |  string or integer|  |  |
+| condition |string|  |  |
 
 ---
 
