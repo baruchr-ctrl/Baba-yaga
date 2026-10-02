@@ -86,6 +86,10 @@ def validate_condition(value):
 
     Returns (bool, str).
     """
+    value =value.lower()
+    if value not in VALID_CONDITIONS:
+        Return (False,"Condition not Valid")
+    return (True,"")
     raise NotImplementedError("validate_condition")
 
 
