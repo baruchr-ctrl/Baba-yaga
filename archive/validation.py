@@ -41,26 +41,29 @@ def validate_id(value):
 
 
 def validate_title(value):
-    work=True
-    
-    #check for numbers in the string
-    checknum= any(char.isdigit() for char in value)
-    if not value.strip() or len(value.strip())<3 or checknum==True:
-        work =False
-        st="This is not a valid title"
-    else:
-        st="This is a valid title"   
-    return (work,st)
-    
+    try:
+        work=True
+        
+        #check for numbers in the string
+        checknum= any(char.isdigit() for char in value)
+        if not value.strip() or len(value.strip())<3 or checknum==True:
+            work =False
+            st="This is not a valid title"
+        else:
+            st="This is a valid title"   
+        return (work,st)
+    except ValueError:
+        return(False,"This is not a valid title")
 
 def validate_city(value):
-  
+  try:
     value = value.lower()
     for i in citylower:
         if value == i:
             return (True, "This is a valid city")
     return (False, "This is not a valid city")
-
+  except ValueError:
+      return (False,"This is not a valid city")
 
 def validate_year(value):
     """A year must be present, numeric, and between MIN_YEAR and MAX_YEAR
