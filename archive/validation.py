@@ -36,7 +36,7 @@ def validate_id(value):
 
     Returns (bool, str).
     """
-    h
+    
     raise NotImplementedError("validate_id")
 
 
@@ -65,6 +65,7 @@ def validate_city(value):
 
 def validate_year(value):
  if not value:
+        value.strip()
         print(False,"Empty year")
  else:       
     if type(value)==int:
@@ -73,7 +74,16 @@ def validate_year(value):
         else:
             return(False,"this is either too old or too recent")
     else:
-        return(False,"Is this even an integer")        
+        try:    
+            number = int(value)
+            if 1009<value and value<1901:
+                return(True,"But you need to check if the int is a string or an int")
+            else:
+                return(False,"this is either too old or too recent")
+        except ValueError:
+            return(False,"Its not even an integer") 
+
+               
 
 
 def validate_condition(value):
