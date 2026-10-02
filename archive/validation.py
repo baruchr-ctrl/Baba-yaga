@@ -76,7 +76,7 @@ def validate_year(value):
     else:
         try:    
             number = int(value)
-            if 1009<value and value<1901:
+            if 1009<number and number<1901:
                 return(True,"But you need to check if the int is a string or an int")
             else:
                 return(False,"this is either too old or too recent")
