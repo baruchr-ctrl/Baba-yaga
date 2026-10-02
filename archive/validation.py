@@ -40,10 +40,10 @@ def validate_id(value):
         return (False,"Empty")
     if len(value)!=5:
         return (False,"The length of ID is not 5")
-    if value[:1]!="MS":
+    if value[:2]!="MS":
         return (False,"First two letters not \'MS\'")
     try:
-        int(value[2:4])
+        int(value[2:5])
         return("True","")
     except ValueError:
         return ("False","Last three letters not all integers")
