@@ -21,7 +21,7 @@ The year range is INCLUSIVE at both ends: 1100 and 1900 are VALID.
 from archive.errors import MalformedRecordError  # noqa: F401  (you may not need it here)
 
 KNOWN_CITIES = ["Timbuktu", "Djenne", "Gao", "Walata", "Chinguetti"]
-
+citylower = ["timbuktu", "djenne", "gao", "walata", "chinguetti"]
 VALID_CONDITIONS = ["fragile", "fair", "good"]
 
 MIN_YEAR = 1100
@@ -36,43 +36,30 @@ def validate_id(value):
 
     Returns (bool, str).
     """
-    if not value :
-        return (False,"Empty")
-    if len(value)!=5:
-        return (False,"The length of ID is not 5")
-    if value[:2]!="MS":
-        return (False,"First two letters not \'MS\'")
-    try:
-        int(value[2:5])
-        return("True","")
-    except ValueError:
-        return ("False","Last three letters not all integers")
-
     
     raise NotImplementedError("validate_id")
 
 
 def validate_title(value):
-    """A title must be present and at least 3 characters once stripped.
-
-    Valid:   "Tarikh al-Sudan"
-    Invalid: "", "   ", "Ab"
-
-    Returns (bool, str).
-    """
-    raise NotImplementedError("validate_title")
-
+    work=True
+    
+    #check for numbers in the string
+    checknum= any(char.isdigit() for char in value)
+    if not value.strip() or len(value.strip())<3 or checknum==True:
+        work =False
+        st="This is not a valid title"
+    else:
+        st="This is a valid title"   
+    return (work,st)
+    
 
 def validate_city(value):
-    """A city must be present and appear in KNOWN_CITIES.
-
-    Comparison is case-insensitive: "timbuktu" is acceptable.
-    "Kano" is not in our list, so it is rejected — and that is a real
-    decision with a cost. Write about it in your README.
-
-    Returns (bool, str).
-    """
-    raise NotImplementedError("validate_city")
+  
+    value = value.lower()
+    for i in citylower:
+        if value == i:
+            return (True, "This is a valid city")
+    return (False, "This is not a valid city")
 
 
 def validate_year(value):
@@ -98,6 +85,10 @@ def validate_condition(value):
 
     Returns (bool, str).
     """
+    value =value.lower()
+    if value not in VALID_CONDITIONS:
+        Return (False,"Condition not Valid")
+    return (True,"")
     raise NotImplementedError("validate_condition")
 
 

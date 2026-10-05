@@ -1,6 +1,6 @@
 # The Archive
 
-**Pair:** *(your two names)* **Repository:** *(link)*
+**Pair:** *(Rugero Baruch,Kibe Ndungu,Tuyisenge Denys Prince)* **Repository:** *(link)*
 
 > This file is Part E of the assignment — **15 marks**. Replace every placeholder below. Delete the instruction lines in italics as you go. Marks come from the reasoning, not the length.
 
@@ -12,11 +12,11 @@
 
 | Field | Type | Example | If it is unknown, we… |
 | --- | --- | --- | --- |
-| id |  | `MS001` |  |
-| title |  |  |  |
-| city |  |  |  |
-| year |  |  |  |
-| condition |  |  |  |
+| id | string | `MS001` |  |
+| title | string |  |  |
+| city | string |  |  |
+| year |  string or integer|  |  |
+| condition |string|  |  |
 
 ---
 
@@ -35,6 +35,9 @@
 *The brief gave you 1100–1900. That was a decision someone made, and it has costs. 1900 excludes a modern copy of an old text. 1100 excludes anything earlier. State whether you accept these bounds or would change them, and say what your choice throws away. An undefended range scores 1 of the 4 marks.*
 
 ---
+### Cost of ignoring some cities
+*When we ignore some cities we may be losing a lot of manuscripts and data from those cities
+*Hence if we had the option to add cities depending on the data ,i think that would be a good option
 
 ## 3\. The `c.1590` decision *(3 marks)*
 
