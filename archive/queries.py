@@ -13,47 +13,52 @@ Note in your README which one would be instant with a dictionary instead.
 
 
 def count_before(records, year):
-    """How many manuscripts were written strictly BEFORE `year`?
+    num=0  
+        
+    try :
+        for rec in records:
+            if int(rec["year"]) < int(year):
+                num = num + 1
 
-    `year` is an int. Record years may be strings from the file — convert.
-
-    Returns int.
-    """
-    raise NotImplementedError("count_before")
-
-
+        return num
+    except (ValueError , KeyError):
+        return "not a valid input"
+    
+         
 def find_by_city(records, city):
-    """Every record whose city matches `city`, case-insensitively.
-
-    Order is preserved: the records come back in the order they appear in
-    `records`.
-
-    Returns list of dicts (empty list if none match).
-    """
-    raise NotImplementedError("find_by_city")
-
+    try:
+        for rec in records:
+                if rec["city"].lower() == city.lower():
+                    return [rec]
+        return []
+    except KeyError:
+        return "list given is empty or not valid"
 
 def oldest(records):
-    """The record with the smallest year.
+    if len(records) == 0:
+        return None
+    else:
+        old=int(records[0]["year"])
+        sma=records[0]
+        for rec in records:
+            if int(rec["year"]) < old:
+                old = int(rec["year"])
+                sma = rec
+        return sma
 
-    An empty list returns None — not an error, not a crash. Deciding what
-    "the oldest of nothing" means is your job, and the answer is None.
 
-    If two records tie on year, return the one that appears FIRST.
-
-    Returns dict or None.
-    """
-    raise NotImplementedError("oldest")
 
 
 def cities_summary(records):
-    """How many manuscripts come from each city?
+        sum = {}
 
-    Returns a dict mapping city name to count. A city with zero manuscripts
-    does not appear as a key at all — do not pre-fill from KNOWN_CITIES.
+        for rec in records:
+            city = rec["city"]
 
-    Use the city spelling exactly as it appears in the records.
+            if city in sum:
+                sum[city] += 1
+            else:
+                sum[city] = 1
 
-    Returns dict.
-    """
-    raise NotImplementedError("cities_summary")
+        return sum
+
