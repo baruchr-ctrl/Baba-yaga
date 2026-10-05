@@ -75,8 +75,27 @@ def test_condition_case():
 #   ABNORMAL   something that is not a year at all
 #   EXTREME    1100 and 1900 — valid, sitting exactly on the edge
 #   BOUNDARY   1099 and 1901 — one step outside, must be rejected
-#
-# TODO: write them here.
+
+def test_year_normal():
+    """NORMAL — a value in the middle of the allowed range."""
+    assert validate_year("1655")[0] is True
+
+
+def test_year_abnormal():
+    """ABNORMAL — not a year at all."""
+    assert validate_year("c.1590")[0] is False
+
+
+def test_year_extreme():
+    """EXTREME — the boundary values are valid when inclusive."""
+    assert validate_year("1100")[0] is True
+    assert validate_year("1900")[0] is True
+
+
+def test_year_boundary():
+    """BOUNDARY — values just outside the range must be rejected."""
+    assert validate_year("1099")[0] is False
+    assert validate_year("1901")[0] is False
 
 
 # ============================================================== your tests
