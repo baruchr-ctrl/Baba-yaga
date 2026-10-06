@@ -81,18 +81,12 @@ def validate_year(value):
 
 
 def validate_condition(value):
-    """A condition must be one of VALID_CONDITIONS, case-insensitively.
-
-    Valid:   "fragile", "GOOD", "Fair"
-    Invalid: "excellent", "", "ok"
-
-    Returns (bool, str).
-    """
+    
     value =value.lower()
     if value not in VALID_CONDITIONS:
-        Return (False,"Condition not Valid")
+        return (False,"Condition not Valid")
     return (True,"")
-    raise NotImplementedError("validate_condition")
+    
 
 
 def validate_record(record):
