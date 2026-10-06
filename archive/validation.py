@@ -64,20 +64,13 @@ def validate_city(value):
 
 
 def validate_year(value):
- if not value:
-        value.strip()
-        print(False,"Empty year")
- else:       
-    if type(value)==int:
-        if 1009<value and value<1901:
-            return(True,"Its valid")
-        else:
-            return(False,"this is either too old or too recent")
-    else:
+ if isinstance(value,str) and not value.strip():
+        return(False,"Empty year")
+ else:      
         try:    
             number = int(value)
-            if 1009<number and number<1901:
-                return(True,"But you need to check if the int is a string or an int")
+            if 1100<=number and number<=1900:
+                return(True,"Valid")
             else:
                 return(False,"this is either too old or too recent")
         except ValueError:
