@@ -13,10 +13,10 @@
 | Field | Type | Example | If it is unknown, we… |
 | --- | --- | --- | --- |
 | id | string | `MS001` |  |
-| title | string |  |  |
-| city | string |  |  |
-| year |  string or integer|  |  |
-| condition |string|  |  |
+| title | string |`Kibe`  |  |
+| city | string | `Timbuktu` |  |
+| year |  string or integer| `1700 `  |  |
+| condition |string| `fragile` |  |
 
 ---
 
@@ -25,10 +25,10 @@
 | Field | Rule(s) | Rejects (example) |
 | --- | --- | --- |
 | id |  |  |
-| title |  |  |
-| city |  |  |
-| year |  |  |
-| condition |  |  |
+| title | `the string should not be less than 3 letters,empty or have random numbers in it` | `pn `|
+| city | `the city given should already be in the list of cities given and should not be empty` | `lalaland` |
+| year |  `the year should be in the accepted range`| `100` |
+| condition |  `the condition should be in the list of conditions already given`|`meh`  |
 
 ### Who decided the year range?
 
