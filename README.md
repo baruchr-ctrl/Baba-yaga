@@ -24,7 +24,7 @@
 
 | Field | Rule(s) | Rejects (example) |
 | --- | --- | --- |
-| id |  |  |
+| id | Length check, format check,presence check and type check|'Ms001'  |
 | title | `the string should not be less than 3 letters,empty or have random numbers in it` | `pn `|
 | city | `the city given should already be in the list of cities given and should not be empty` | `lalaland` |
 | year |  `the year should be in the accepted range`| `100` |
@@ -81,7 +81,7 @@
 
 *One paragraph each, written separately and signed. Do not write these together — the point is two honest accounts.*
 
-***(partner 1 name)*:** One thing my partner did that I will steal: One thing I would do differently next time:
+***(Denys)*:** One thing my partner did that I will steal: Kibe found a slick mistake in my code which i found really cool.  One thing I would do differently next time: I will double check the branch and the repository i am pushing to 
 
 ***(partner 2 name)*:** One thing my partner did that I will steal: One thing I would do differently next time:
 
