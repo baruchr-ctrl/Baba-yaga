@@ -85,15 +85,15 @@
 
 ***(partner 2 name)*:** One thing my partner did that I will steal: One thing I would do differently next time:
 
----
+***(Kibe)*:**slicing technique by Denys is something Im planning to use:One thing i would do differently is how i make my pull requests and where they go.
 
 ## 6\. Declaration
 
 *Required. See the integrity section of the brief.*
 
-- [ ] Both of us can explain every line in this repository.
+- [ ok] Both of us can explain every line in this repository.
 
-- [ ] AI assistants used for explanation only, not to generate our implementation or our tests.
+- [ ok] AI assistants used for explanation only, not to generate our implementation or our tests.
 
 **If you used an AI assistant, say what you asked and what you did with the answer:**
 
