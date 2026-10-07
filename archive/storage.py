@@ -12,7 +12,7 @@ Remember Session 1: a file is one long line of characters. The comma
 separates fields; the newline separates records. Nothing else is doing
 any work.
 """
-
+from archive.validation import validate_record 
 from archive.errors import MalformedRecordError
 
 FIELD_NAMES = ["id", "title", "city", "year", "condition"]
