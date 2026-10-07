@@ -29,13 +29,7 @@ MAX_YEAR = 1900
 
 
 def validate_id(value):
-       """An ID is the letters 'MS' followed by exactly three digits.
-
-    Valid:   "MS001", "MS742"
-    Invalid: "MS1", "MS0012", "ms001", "XX001", "", "MS00A"
-
-    Returns (bool, str).
-    """
+      
     if not value :
         return (False,"Empty")
     if len(value)!=5:
@@ -49,7 +43,6 @@ def validate_id(value):
         return ("False","Last three letters not all integers")
 
     
-    raise NotImplementedError("validate_id")
 
 
 
@@ -104,6 +97,18 @@ def validate_condition(value):
 
 
 def validate_record(record):
+    st=[]
+    if(validate_condition(record["condition"])==False):
+        st.append( "Condition not Valid")
+    if(validate_year(record["year"])==False):
+        st.append("Year not Valid")
+    if(validate_city(record["city"])==False):
+        st.append("City not Valid")
+    if(validate_title(record["title"])==False):
+        st.append("Title not Valid")
+    if(validate_id(record["id"])==False):
+        st.append("ID not Valid")
+    return st
     """Validate a whole record dictionary.
 
     record is a dict with the keys: id, title, city, year, condition.
@@ -114,4 +119,3 @@ def validate_record(record):
 
     Do not re-write the rules here. Call the five functions above.
     """
-    raise NotImplementedError("validate_record")
