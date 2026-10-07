@@ -12,11 +12,11 @@
 
 | Field | Type | Example | If it is unknown, we… |
 | --- | --- | --- | --- |
-| id | string | `MS001` |  |
-| title | string |`Kibe`  |  |
-| city | string | `Timbuktu` |  |
-| year |  string or integer| `1700 `  |  |
-| condition |string| `fragile` |  |
+| id | string | `MS001` | `Invalid` |
+| title | string |`Kibe`  | `Invalid` |
+| city | string | `Timbuktu` |  `Invalid`|
+| year |  string or integer| `1700 `  |`Invalid`  |
+| condition |string| `fragile` |`Invalid`  |
 
 ---
 
@@ -24,7 +24,7 @@
 
 | Field | Rule(s) | Rejects (example) |
 | --- | --- | --- |
-| id | "Length check : the string should be of length 5, format check: the first two characters and the last three have an exact format"|"Ms001" |
+| id | `Length check : the string should be of length 5, format check: the first two characters and the last three have an exact format`|`Ms001` |
 | title | `the string should not be less than 3 letters,empty or have random numbers in it` | `pn `|
 | city | `the city given should already be in the list of cities given and should not be empty` | `lalaland` |
 | year |  `the year should be in the accepted range`| `100` |
