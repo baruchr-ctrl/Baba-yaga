@@ -31,8 +31,7 @@
 | condition |  `the condition should be in the list of conditions already given`|`meh`  |
 
 ### Who decided the year range?
-
-*The brief gave you 1100–1900. That was a decision someone made, and it has costs. 1900 excludes a modern copy of an old text. 1100 excludes anything earlier. State whether you accept these bounds or would change them, and say what your choice throws away. An undefended range scores 1 of the 4 marks.*
+I cant really change them because i would assume that since its easier to write ,alot of records would be clustered somewhere after 1900. this would make the conditions in 1100 look like outliers. we are losing the manuscripts but we have less biased data. there is no exact reason we couldnt go back but i would also assume that the manuscripts before 1100 we too few to be ignored.
 
 ---
 ### Cost of ignoring some cities
@@ -50,10 +49,11 @@
 - **(c)** Store `1590` plus a separate `approximate` flag.
 
 **Our choice:**
-
+We chose to ignore the whole number. 
 **Why:**
-
+if we were to accept a number like that then it would reduce the accurrancy of our info. we would rather have little precise info than have alot of inaccurate info
 **What it costs us:**
+ofcourse we would have less data to consider which might bias our conclusions
 
 ---
 
@@ -64,11 +64,11 @@
 | Test data | Value | Expected | Actual | Pass? |
 | --- | --- | --- | --- | --- |
 | Normal | 1655 | valid |  |  |
-| Abnormal |  |  |  |  |
-| Extreme (low) | 1100 | valid |  |  |
-| Extreme (high) |  |  |  |  |
-| Boundary (below) | 1099 | invalid |  |  |
-| Boundary (above) |  |  |  |  |
+| Abnormal | abc | invalid |  |  |
+| Extreme (low) | 1000 | invalid |  |  |
+| Extreme (high) | 1901 | invalid |  |  |
+| Boundary (below) | 1100 | valid |  |  |
+| Boundary (above) | 1900 | valid |  |  |
 
 ### `_______________` *(one other field of your choice)*
 
@@ -83,9 +83,10 @@
 
 ***(Denys)*:** One thing my partner did that I will steal: Kibe found a slick mistake in my code which i found really cool.  One thing I would do differently next time: I will double check the branch and the repository i am pushing to 
 
-***(partner 2 name)*:** One thing my partner did that I will steal: One thing I would do differently next time:
+***(Baruch)*:** One thing my partner did that I will steal:Not really steal but my partners are really cool. They like found a lot of errors in what i did and gave suggestions on what to do with them. Validate year was a tough one.
+One thing I would do differently next time:Most of the things. checking what branch im on , what im commiting , if i had the auto save on and where my pull requests go beacuse these silly mistakes took alot of time to fix.
 
-***(Kibe)*:**slicing technique by Denys is something Im planning to use:One thing i would do differently is how i make my pull requests and where they go.
+***(Kibe)*:** slicing technique by Denys is something Im planning to use:One thing i would do differently is how i make my pull requests and where they go.
 
 ## 6\. Declaration
 
@@ -96,6 +97,8 @@
 - [ ok] AI assistants used for explanation only, not to generate our implementation or our tests.
 
 **If you used an AI assistant, say what you asked and what you did with the answer:**
+I asked it to help me with github at first. it gave me new commands like switch which actually worked. ( switch is to switch branches)
+I also asked it to help me with storage especially how the code reads the file. i learnt a new key word "utf-8" which is practically an system which encodes all characters.
 
 ---
 
