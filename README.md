@@ -12,11 +12,11 @@
 
 | Field | Type | Example | If it is unknown, we… |
 | --- | --- | --- | --- |
-| id | string | `MS001` | `Invalid` |
-| title | string |`Kibe`  | `Invalid` |
-| city | string | `Timbuktu` |  `Invalid`|
-| year |  string or integer| `1700 `  |`Invalid`  |
-| condition |string| `fragile` |`Invalid`  |
+| id | string | `MS001` | `We give a string explaining that it is Invalid` |
+| title | string |`Kibe`  | `We give a string explaining that it is Invalid`  |
+| city | string | `Timbuktu` |  `We give a string explaining that it is Invalid` |
+| year |  string or integer| `1700 `  |`We give a string explaining that it is Invalid` |
+| condition |string| `fragile` |`We give a string explaining that it is Invalid`  |
 
 ---
 
